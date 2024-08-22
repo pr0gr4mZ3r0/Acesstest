@@ -1,0 +1,24 @@
+> validation of access tests:
+> ####Connectivity tests in python#####
+> import requests
+> 
+> # List of URLs to test
+> urls = [
+>     "http://www3.acesso.io/"
+> ]
+> 
+> def test_connectivity(url):
+>     try:
+>         response = requests.get(url)
+>         # Check if the response status code indicates success (2xx)
+>         if response.status_code == 200:
+>             print(f"Connectivity with {url}: OK")
+>         else:
+>             print(f"Connectivity with {url}: Failed - Status code: {response.status_code}")
+>     except requests.exceptions.RequestException as e:
+>         print(f"Connectivity with {url}: Failed - Error: {e}")
+> 
+> # Test connectivity for each URL
+> for url in urls:
+>     test_connectivity(url)
+> ###test content - simulation###
